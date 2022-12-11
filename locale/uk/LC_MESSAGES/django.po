@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-10 23:23+0100\n"
+"POT-Creation-Date: 2022-12-11 15:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,43 +21,47 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\bosch\settings.py:114
+#: .\bosch\settings.py:115
 msgid "English"
 msgstr ""
 
-#: .\bosch\settings.py:115
+#: .\bosch\settings.py:116
 msgid "German"
 msgstr ""
 
-#: .\bosch\settings.py:116
+#: .\bosch\settings.py:117
 msgid "ukrainian"
 msgstr ""
 
 #: .\bosch\urls.py:21
-msgid "polls/"
+msgid "admin/"
 msgstr ""
 
-#: .\bosch\urls.py:22
-msgid "admin/"
+#: .\bosch\urls.py:23
+msgid "polls/"
 msgstr ""
 
 #: .\polls\templates\polls\base.html:32
 msgid "language"
 msgstr "Mовa"
 
-#: .\polls\templates\polls\detail.html:14
+#: .\polls\templates\polls\detail.html:15
+msgid "restriction"
+msgstr "Напишіть своє ім'я нижче, якщо ви не хочете голосувати анонімно. Один користувач відповідає один раз."
+
+#: .\polls\templates\polls\detail.html:17
 msgid "vote"
 msgstr "Голосувати"
 
 #: .\polls\templates\polls\index.html:4
-msgid "app_name"
-msgstr "Програма Polls"
-
-#: .\polls\templates\polls\index.html:5
 msgid "welcome"
 msgstr "Ласкаво просимо"
 
-#: .\polls\templates\polls\results.html:13
+#: .\polls\templates\polls\index.html:5
+msgid "app_name"
+msgstr "Програма Polls"
+
+#: .\polls\templates\polls\results.html:39
 msgid "vote_again"
 msgstr "Знову голосувати?"
 

@@ -33,6 +33,8 @@ class Choice(models.Model):
 
 class Voter(models.Model):
     chosen_choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    # connecting with question to restrict one person of answering to one question multiple times
+    # answered_question = models.ForeignKey(Question, on_delete=models.CASCADE)
     voter_name = models.CharField(max_length=60)
     def __str__(self):
         return self.voter_name

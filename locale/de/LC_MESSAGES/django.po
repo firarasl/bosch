@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-10 23:23+0100\n"
+"POT-Creation-Date: 2022-12-11 15:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\bosch\settings.py:114
+#: .\bosch\settings.py:115
 msgid "English"
 msgstr ""
 
-#: .\bosch\settings.py:115
+#: .\bosch\settings.py:116
 msgid "German"
 msgstr ""
 
-#: .\bosch\settings.py:116
+#: .\bosch\settings.py:117
 msgid "ukrainian"
 msgstr ""
 
 #: .\bosch\urls.py:21
-msgid "polls/"
+msgid "admin/"
 msgstr ""
 
-#: .\bosch\urls.py:22
-msgid "admin/"
+#: .\bosch\urls.py:23
+msgid "polls/"
 msgstr ""
 
 #: .\polls\templates\polls\base.html:32
 msgid "language"
 msgstr "Sprache"
 
-#: .\polls\templates\polls\detail.html:14
+#: .\polls\templates\polls\detail.html:15
+msgid "restriction"
+msgstr "Schreiben Sie unten Ihren Namen, wenn Sie nicht anonym abstimmen möchten. Ein Benutzer antwortet einmal."
+
+#: .\polls\templates\polls\detail.html:17
 msgid "vote"
 msgstr "Wählen"
 
 #: .\polls\templates\polls\index.html:4
-msgid "app_name"
-msgstr "Umfragen Anwendung"
-
-#: .\polls\templates\polls\index.html:5
 msgid "welcome"
 msgstr "Willkommen"
 
-#: .\polls\templates\polls\results.html:13
+#: .\polls\templates\polls\index.html:5
+msgid "app_name"
+msgstr "Umfragen Anwendung"
+
+#: .\polls\templates\polls\results.html:39
 msgid "vote_again"
 msgstr "Wieder wählen?"
 

@@ -20,11 +20,19 @@
 <p>
 {% for voter in voters %}
 
-    {% if voter.chosen_choice.choice_text == choice.choice_text %}
+    {% if voter.choice_text == choice.choice_text  and voter.voter_name %}
      <span class="badge badge-success" >{{ voter.voter_name}}  </span>
     {% endif %}
 {% endfor %}
 </p>
+
+  {% for w in voters_count %}
+          {% if choice.choice_text == w.choice_text and w.count == 0  %}
+        <p>No names available.</p>
+      {% endif %}
+
+{% endfor %}
+
 
     {% if choice.votes == 0 %}
         <p>Choice has 0 votes.</p>

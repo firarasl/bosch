@@ -53,13 +53,20 @@ def vote(request, pk):
             'error_message': "You didn't select a choice.",
         })
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
         if (voter != ""):
+            voters_list = Voter.objects.filter(voter_name=voter+":"+str(question.id))
             saved_voter = Voter()
-            saved_voter.voter_name = voter
+            saved_voter.voter_name = voter+":"+str(question.id)
             saved_voter.chosen_choice = selected_choice
-            saved_voter.save()
+            if(voters_list.count() ==0):
+                selected_choice.votes += 1
+                selected_choice.save()
+                saved_voter.save()
+        else:
+            # for anonymous choices
+            selected_choice.votes += 1
+            selected_choice.save()
+
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
@@ -79,9 +86,20 @@ def results(request, pk):
     question = get_object_or_404(Question, pk=pk)
     template = loader.get_template('polls/results.html')
     voters = Voter.objects.all()
+    edited_voters = []
+
+    voters_count_filtered_by_choice = []
+    for choice in question.choice_set.all():
+        count = Voter.objects.filter(chosen_choice=choice).count()
+        voters_count_filtered_by_choice.append({"choice_text": choice.choice_text, "count": count })
+
+    for voter in voters:
+        votername_arr=voter.voter_name.split(":")
+        edited_voters.append({'choice_text':voter.chosen_choice.choice_text, 'voter_name':votername_arr[0]})
     context = {
         'question': question,
-        'voters': voters,
+        'voters': edited_voters,#voters,
+        'voters_count': voters_count_filtered_by_choice
     }
     return render(request, 'polls/results.html', context)
 
