@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 15:07+0100\n"
+"POT-Creation-Date: 2022-12-11 19:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,55 +20,71 @@ msgstr ""
 
 # to translate static text in html, use syntax
 # {% translate "example" %} and {% load i18n %} in templates
+# Download file from the link below to get dependencies for translation
+# https://mlocati.github.io/articles/gettext-iconv-windows.html
+# do not forget to add its executable to the envinment variable PATH
 # write    python .\manage.py makemessages --all       in the terminal
 # update translations (do it every time after changes in translation!!!):
 # python .\manage.py compilemessages
 # write correct translations in the django.po files  and run the project
 
-
-
-
-#: .\bosch\settings.py:115
+#: .\bosch\settings.py:123
 msgid "English"
 msgstr ""
 
-#: .\bosch\settings.py:116
+#: .\bosch\settings.py:124
 msgid "German"
 msgstr ""
 
-#: .\bosch\settings.py:117
+#: .\bosch\settings.py:125
 msgid "ukrainian"
 msgstr ""
 
-#: .\bosch\urls.py:21
+#: .\bosch\urls.py:26
 msgid "admin/"
 msgstr ""
 
-#: .\bosch\urls.py:23
+#: .\bosch\urls.py:28
 msgid "polls/"
 msgstr ""
 
-#: .\polls\templates\polls\base.html:32
+#: .\polls\templates\polls\base.html:34
 msgid "language"
 msgstr "Sprache"
 
-#: .\polls\templates\polls\detail.html:15
-msgid "restriction"
-msgstr "Schreiben Sie unten Ihren Namen, wenn Sie nicht anonym abstimmen möchten. Ein Benutzer antwortet einmal."
+#: .\polls\templates\polls\detail.html:21
+msgid "view_results"
+msgstr "Ergebnisse ohne Abstimmung anzeigen"
 
-#: .\polls\templates\polls\detail.html:17
+#: .\polls\templates\polls\detail.html:27
+msgid "restriction"
+msgstr ""
+"Schreiben Sie unten Ihren Namen, wenn Sie nicht anonym abstimmen möchten. "
+"Ein Benutzer antwortet einmal."
+
+#: .\polls\templates\polls\detail.html:29
 msgid "vote"
 msgstr "Wählen"
 
-#: .\polls\templates\polls\index.html:4
+#: .\polls\templates\polls\index.html:5
 msgid "welcome"
 msgstr "Willkommen"
 
-#: .\polls\templates\polls\index.html:5
+#: .\polls\templates\polls\index.html:6
 msgid "app_name"
 msgstr "Umfragen Anwendung"
 
+#: .\polls\templates\polls\results.html:31
+msgid "no_non_anonym_voters"
+msgstr "Es sind keine Spitznamen der Wähler verfügbar."
+
 #: .\polls\templates\polls\results.html:39
+#, fuzzy
+#| msgid "vote"
+msgid "no_voters"
+msgstr "Auswahl hat 0 Stimmen."
+
+#: .\polls\templates\polls\results.html:48
 msgid "vote_again"
 msgstr "Wieder wählen?"
 

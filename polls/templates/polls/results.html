@@ -28,7 +28,7 @@
 <!-- If everyone voted anonymously, names will not be displayed. -->
   {% for w in voters_count %}
           {% if choice.choice_text == w.choice_text and w.count == 0  %}
-        <p>No names available.</p>
+        <p>{% translate "no_non_anonym_voters" %}</p>
       {% endif %}
 
 {% endfor %}
@@ -36,7 +36,7 @@
 <!-- If choice has no votes at all. -->
 
     {% if choice.votes == 0 %}
-        <p>Choice has 0 votes.</p>
+        <p>{% translate "no_voters" %}</p>
     {% endif %}
 
   </div>
