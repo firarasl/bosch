@@ -1,0 +1,38 @@
+
+/* add style for all html that import this file*/
+
+
+body{
+background: rgb(0,0,2);
+background: linear-gradient(90deg, rgba(0,0,2,1) 0%, rgba(249,249,251,1) 0%, rgba(156,191,191,1) 59%);
+
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 50%;
+    margin-top: 20px;
+}
+.list-group{
+    margin-top: 30px;
+}
+
+.btn-primary{
+    margin-top: 20px !important
+}
+
+label,li,input{
+    cursor: pointer;
+}
+.badge{
+    color: white !important;
+}
+
+ul {
+  list-style-type: none;
+}
+

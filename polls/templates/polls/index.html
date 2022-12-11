@@ -1,0 +1,20 @@
+{% extends 'polls/base.html'%}
+{% load i18n %}
+<!-- First page of the website -->
+{% block content %}
+<h3><strong>{% translate "welcome" %}</strong></h3>
+<div style="margin-top: 50px"> <h1>{% translate "app_name" %}</h1></div>
+<div class="list group">
+<!-- Display questions if polls are available -->
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+<li><a class= "list-group-item list-group-item-action" href="{% url 'vote' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+   </div>
+{% endblock%}

@@ -1,0 +1,49 @@
+{% extends 'polls/base.html'%}
+{% load i18n %}
+{% load poll_extras %}
+{% block content %}
+<h1>{{ question.question_text }}</h1>
+<!-- Result page after completing the voting process, displays non-anonym voter names when clicked on info toggle. -->
+<ul>
+{% for choice in question.choice_set.all %}
+
+        <li class="list-group-item  d-flex justify-content-between align-items-center">
+            {{ choice.choice_text }}<span> <span class="badge bg-primary rounded-pill"> {{ choice.votes }} </span> vote{{ choice.votes|pluralize }}</span>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample{{forloop.counter}}" aria-expanded="false" aria-controls="collapseExample">
+    info
+  </button></li>
+
+
+<div class="collapse" id="collapseExample{{forloop.counter}}">
+  <div class="card card-body">
+
+<p>
+{% for voter in voters %}
+
+    {% if voter.choice_text == choice.choice_text  and voter.voter_name %}
+     <span class="badge badge-success" >{{ voter.voter_name}}  </span>
+    {% endif %}
+{% endfor %}
+</p>
+<!-- If everyone voted anonymously, names will not be displayed. -->
+  {% for w in voters_count %}
+          {% if choice.choice_text == w.choice_text and w.count == 0  %}
+        <p>{% translate "no_non_anonym_voters" %}</p>
+      {% endif %}
+
+{% endfor %}
+
+<!-- If choice has no votes at all. -->
+
+    {% if choice.votes == 0 %}
+        <p>{% translate "no_voters" %}</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endfor %}
+</ul>
+
+<a href="{% url 'detail' question.id %}">{% translate "vote_again" %}</a>
+{% endblock%}
