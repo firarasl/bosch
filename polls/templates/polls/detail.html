@@ -1,12 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Polls</title>
-</head>
-<body>
-<form action="{% url 'polls:vote' question.id %}" method="post">
+{% extends 'polls/base.html'%}
+{% load i18n %}
+{% block content %}
+<form action="{% url 'vote' question.id %}" method="post">
 {% csrf_token %}
 <fieldset>
     <legend><h1>{{ question.question_text }}</h1></legend>
@@ -16,7 +11,6 @@
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
 </fieldset>
-<input type="submit" value="Vote">
+<input class="btn btn-primary" type="submit" value="{% translate "vote" %}">
 </form>
-</body>
-</html>
+{% endblock%}

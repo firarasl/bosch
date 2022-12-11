@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Polls</title>
-</head>
-<body>
+{% extends 'polls/base.html'%}
+{% load i18n %}
+{% block content %}
 <h1>{{ question.question_text }}</h1>
 
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        <li class="list-group-item  d-flex justify-content-between align-items-center">
+{{ choice.choice_text }} <span class="badge bg-primary rounded-pill"> {{ choice.votes }} </span> vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
-
-</body>
-</html>
+<a href="{% url 'detail' question.id %}">{% translate "vote_again" %}</a>
+{% endblock%}

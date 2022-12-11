@@ -1,7 +1,24 @@
-body {
-    /*background: white url("images/background.png") no-repeat;*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
 
-li a {
-    color: green;
+.container{
+    width: 50%;
+    margin-top: 20px;
+}
+.list-group{
+    margin-top: 30px;
+}
+
+.btn-primary{
+    margin-top: 20px !important
+}
+
+label,li,input{
+    cursor: pointer;
+}
+.badge{
+    color: white !important;
 }
