@@ -11,7 +11,7 @@ $ cd bosch
 
 Activate virtual environment
 ```sh
-$ .\venv\bin\activate
+$ .\venv\Scripts\activate
 ```
 
 Then install the dependencies:
@@ -33,6 +33,9 @@ And navigate to `http://127.0.0.1:8000`.
 ### Polls' administration
 
 Open the administration version of the website by using the link: http://127.0.0.1:8000/admin/
+User: admin
+Password: admin
+
 Choose questions in the bar menu on the left side to see available features.
 You may search for the needed poll by published date or by title. You may also sort the shown polls.
 In order to create a new poll, click on green button on the right corner, specify question, publish date and time, 
