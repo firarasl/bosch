@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 19:05+0100\n"
+"POT-Creation-Date: 2022-12-11 21:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,23 +27,27 @@ msgstr ""
 # update translations (do it every time after changes in translation!!!):
 # python .\manage.py compilemessages
 # write correct translations in the django.po files  and run the project
-#: .\bosch\settings.py:123
+#: .\bosch\settings.py:124
 msgid "English"
 msgstr ""
 
-#: .\bosch\settings.py:124
+#: .\bosch\settings.py:125
 msgid "German"
 msgstr ""
 
-#: .\bosch\settings.py:125
+#: .\bosch\settings.py:126
 msgid "ukrainian"
 msgstr ""
 
 #: .\bosch\urls.py:26
+msgid "admin/doc/"
+msgstr ""
+
+#: .\bosch\urls.py:27
 msgid "admin/"
 msgstr ""
 
-#: .\bosch\urls.py:28
+#: .\bosch\urls.py:29
 msgid "polls/"
 msgstr ""
 
@@ -77,13 +81,7 @@ msgstr "Програма Polls"
 msgid "no_non_anonym_voters"
 msgstr "Ніки виборців відсутні."
 
-#: .\polls\templates\polls\results.html:39
-#, fuzzy
-#| msgid "vote"
-msgid "no_voters"
-msgstr "Вибір має 0 голосів."
-
-#: .\polls\templates\polls\results.html:48
+#: .\polls\templates\polls\results.html:45
 msgid "vote_again"
 msgstr "Знову голосувати?"
 
@@ -1282,3 +1280,11 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:249
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#, fuzzy
+#~| msgid "vote"
+#~ msgid "zero_voters"
+#~ msgstr "Вибір має 0 голосів."
+
+#~ msgid "null_number_of_total_voters"
+#~ msgstr "Вибір має 0 голосів."

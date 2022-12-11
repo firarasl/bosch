@@ -2,8 +2,9 @@
 {% load i18n %}
 <!-- First page of the website -->
 {% block content %}
-<h3><strong>{% translate "welcome" %}</strong></h3>
-<div style="margin-top: 50px"> <h1>{% translate "app_name" %}</h1></div>
+<h3 style="text-align: center"><strong >{% translate "welcome" %}</strong></h3>
+<div style="margin-top: 50px; text-align: center"> <h1>{% translate "app_name" %}</h1></div>
+    <br>
 <div class="list group">
 <!-- Display questions if polls are available -->
 {% if latest_question_list %}

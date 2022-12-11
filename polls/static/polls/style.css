@@ -5,6 +5,8 @@
 body{
 background: rgb(0,0,2);
 background: linear-gradient(90deg, rgba(0,0,2,1) 0%, rgba(249,249,251,1) 0%, rgba(156,191,191,1) 59%);
+    font-family: FontAwesome;
+    font-weight: bolder;
 
 }
 *{
@@ -36,3 +38,20 @@ ul {
   list-style-type: none;
 }
 
+
+li{
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.custom-collapse{
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+}
+.btn {
+    margin-top: 0px !important;
+}
+
+.hover-line:hover{
+    background-color: rgba(255,255,255, 0.5);
+}

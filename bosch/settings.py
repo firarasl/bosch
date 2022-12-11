@@ -130,7 +130,7 @@ TIME_ZONE = 'Europe/Berlin'
 
 # path to the locales
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR,'locale/'),
+    os.path.join(BASE_DIR,'locale/',),
 )
 
 USE_I18N = True
