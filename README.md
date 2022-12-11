@@ -23,9 +23,9 @@ $ source venv/Scripts/activate
 Then install the dependencies:
 
 ```sh
-(env)$ pip install -r requirements.txt
+(venv)$ pip install -r requirements.txt
 ```
-Note the `(env)` in front of the prompt. This indicates that this terminal
+Note the `(venv)` in front of the prompt. This indicates that this terminal
 session operates in a virtual environment.
 
 Once `pip` has finished downloading the dependencies:
@@ -87,5 +87,5 @@ To go back to main page, press "Bosch Polls" logo in the navigation bar.
 
 To run the tests, `cd` into the directory where `manage.py` is:
 ```sh
-(env)$ python manage.py test
+(venv)$ python manage.py test
 ```
