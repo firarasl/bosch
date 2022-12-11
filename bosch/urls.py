@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+
+# import libraries for i18n
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy as _
+
+# using i18n and _ for translation and adding language code to url slug purposes
+
 urlpatterns = [
     path(_('admin/'), admin.site.urls),
     path('', include('polls.urls')),

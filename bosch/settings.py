@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    # Jazzmin - customized admin panel UI
+    # installed with pip install -U django-jazzmin
+    # from https://django-jazzmin.readthedocs.io/installation/
     'jazzmin',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -46,7 +50,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # import additional middleware for localization
     'django.middleware.locale.LocaleMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -111,6 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# list of supported languages
 LANGUAGES = (
     ('en', _('English')),
     ('de', _('German')),
@@ -119,6 +127,7 @@ LANGUAGES = (
 
 TIME_ZONE = 'Europe/Berlin'
 
+# path to the locales
 LOCALE_PATHS = (
     os.path.join(BASE_DIR,'locale/'),
 )

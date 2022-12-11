@@ -1,3 +1,7 @@
+
+/* add style for all html that import this file*/
+
+
 body{
 background: rgb(0,0,2);
 background: linear-gradient(90deg, rgba(0,0,2,1) 0%, rgba(249,249,251,1) 0%, rgba(156,191,191,1) 59%);

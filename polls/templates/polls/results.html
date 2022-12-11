@@ -3,7 +3,7 @@
 {% load poll_extras %}
 {% block content %}
 <h1>{{ question.question_text }}</h1>
-
+<!-- Result page after completing the voting process, displays non-anonym voter names when clicked on info toggle. -->
 <ul>
 {% for choice in question.choice_set.all %}
 
@@ -25,7 +25,7 @@
     {% endif %}
 {% endfor %}
 </p>
-
+<!-- If everyone voted anonymously, names will not be displayed. -->
   {% for w in voters_count %}
           {% if choice.choice_text == w.choice_text and w.count == 0  %}
         <p>No names available.</p>
@@ -33,6 +33,7 @@
 
 {% endfor %}
 
+<!-- If choice has no votes at all. -->
 
     {% if choice.votes == 0 %}
         <p>Choice has 0 votes.</p>
@@ -45,9 +46,4 @@
 </ul>
 
 <a href="{% url 'detail' question.id %}">{% translate "vote_again" %}</a>
-{##}
-{#{% for voter in voters.all %}#}
-{#<h1>{{ voter.voter_name }}</h1>#}
-{#{% endfor %}#}
-
 {% endblock%}

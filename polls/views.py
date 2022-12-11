@@ -11,6 +11,10 @@ from django.views import generic
 from django.utils import timezone
 
 class IndexView(generic.ListView):
+    """
+    Returns index page with last questions
+    """
+
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
@@ -36,34 +40,46 @@ class DetailView(generic.DetailView):
 
 
 class ResultsView(generic.DetailView):
+    """
+    Returns result page
+    """
+
     model = Question
     template_name = 'polls/results.html'
 
 
 
 def vote(request, pk):
+    """
+    Accepts post requests from the front end,
+    """
+
+    # get question by ID
     question = get_object_or_404(Question, pk=pk)
     try:
+        # get selected choice and voter
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
         voter = request.POST['voter']
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'polls/detail.html', {
             'question': question,
-            'error_message': "You didn't select a choice.",
         })
     else:
-        if (voter != ""):
+        # if voter name is sent not empty and the voter with this name has not voted for this question before,
+        # then create an object Voter and save it
+        # increment quantity of selected choice
+        if voter != "":
             voters_list = Voter.objects.filter(voter_name=voter+":"+str(question.id))
             saved_voter = Voter()
             saved_voter.voter_name = voter+":"+str(question.id)
             saved_voter.chosen_choice = selected_choice
-            if(voters_list.count() ==0):
+            if voters_list.count() ==0:
                 selected_choice.votes += 1
                 selected_choice.save()
                 saved_voter.save()
         else:
-            # for anonymous choices
+            # for anonymous choices, a Voter is not created.
             selected_choice.votes += 1
             selected_choice.save()
 
@@ -72,10 +88,13 @@ def vote(request, pk):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('results', args=(question.id,)))
 
+
+
 def index(request):
+    """
+    returns index page with questions
+    """
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    # output = ', '.join([q.question_text for q in latest_question_list])
-    template = loader.get_template('polls/index.html')
     context = {
         'latest_question_list': latest_question_list,
     }
@@ -83,10 +102,19 @@ def index(request):
 
 
 def results(request, pk):
+
+    """
+    Returns results page after voting has been completed
+
+    """
+    # gets question by ID if it exists
     question = get_object_or_404(Question, pk=pk)
-    template = loader.get_template('polls/results.html')
     voters = Voter.objects.all()
     edited_voters = []
+
+
+    # Grouping voters inside a dictionary by choices and counts of
+    # how many times these choices were selected by non-anonymous voters
 
     voters_count_filtered_by_choice = []
     for choice in question.choice_set.all():

@@ -18,6 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+
+
+# to translate static text in html, use syntax
+# {% translate "example" %} and {% load i18n %} in templates
+# write    python .\manage.py makemessages --all       in the terminal
+# update translations (do it every time after changes in translation!!!):
+# python .\manage.py compilemessages
+# write correct translations in the django.po files  and run the project
+
+
+
+
+
+
 #: .\bosch\settings.py:115
 msgid "English"
 msgstr ""

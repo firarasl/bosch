@@ -2,15 +2,13 @@ from django.urls import path
 
 from . import views
 
-# app_name = 'polls'
-
 urlpatterns = [
-    # ex: /polls/
+    # ex: / - list all questions
     path('', views.IndexView.as_view(), name='index'),
-    # ex: /polls/5/
+    # ex: /5/ - show details of the question with id = 5
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
-    # ex: /polls/5/results/
+    # ex: /5/results/ - show the vote results
     path('<int:pk>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
+    # ex: /5/vote/ - send POST request to update vote count
     path('<int:pk>/vote/', views.vote, name='vote'),
 ]
