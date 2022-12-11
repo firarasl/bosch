@@ -11,6 +11,8 @@
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
 </fieldset>
+    <h5>Write your name below if you don't want to vote anonymously</h5>
+    <input type="text" name="voter" class="form-control"  placeholder="Name">
 <input class="btn btn-primary" type="submit" value="{% translate "vote" %}">
 </form>
 {% endblock%}

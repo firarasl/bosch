@@ -1,14 +1,45 @@
 {% extends 'polls/base.html'%}
 {% load i18n %}
+{% load poll_extras %}
 {% block content %}
 <h1>{{ question.question_text }}</h1>
 
 <ul>
 {% for choice in question.choice_set.all %}
+
         <li class="list-group-item  d-flex justify-content-between align-items-center">
-{{ choice.choice_text }} <span class="badge bg-primary rounded-pill"> {{ choice.votes }} </span> vote{{ choice.votes|pluralize }}</li>
+            {{ choice.choice_text }}<span> <span class="badge bg-primary rounded-pill"> {{ choice.votes }} </span> vote{{ choice.votes|pluralize }}</span>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample{{forloop.counter}}" aria-expanded="false" aria-controls="collapseExample">
+    info
+  </button></li>
+
+
+<div class="collapse" id="collapseExample{{forloop.counter}}">
+  <div class="card card-body">
+
+<p>
+{% for voter in voters %}
+
+    {% if voter.chosen_choice.choice_text == choice.choice_text %}
+     <span class="badge badge-success" >{{ voter.voter_name}}  </span>
+    {% endif %}
+{% endfor %}
+</p>
+
+    {% if choice.votes == 0 %}
+        <p>Choice has 0 votes.</p>
+    {% endif %}
+
+  </div>
+</div>
+
 {% endfor %}
 </ul>
 
 <a href="{% url 'detail' question.id %}">{% translate "vote_again" %}</a>
+{##}
+{#{% for voter in voters.all %}#}
+{#<h1>{{ voter.voter_name }}</h1>#}
+{#{% endfor %}#}
+
 {% endblock%}

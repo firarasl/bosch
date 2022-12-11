@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-from .models import Question, Choice
+from .models import Question, Choice, Voter
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
@@ -41,11 +41,11 @@ class ResultsView(generic.DetailView):
 
 
 
-
 def vote(request, pk):
     question = get_object_or_404(Question, pk=pk)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        voter = request.POST['voter']
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'polls/detail.html', {
@@ -55,6 +55,11 @@ def vote(request, pk):
     else:
         selected_choice.votes += 1
         selected_choice.save()
+        if (voter != ""):
+            saved_voter = Voter()
+            saved_voter.voter_name = voter
+            saved_voter.chosen_choice = selected_choice
+            saved_voter.save()
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
@@ -69,4 +74,14 @@ def index(request):
     }
     return render(request, 'polls/index.html', context)
 
+
+def results(request, pk):
+    question = get_object_or_404(Question, pk=pk)
+    template = loader.get_template('polls/results.html')
+    voters = Voter.objects.all()
+    context = {
+        'question': question,
+        'voters': voters,
+    }
+    return render(request, 'polls/results.html', context)
 

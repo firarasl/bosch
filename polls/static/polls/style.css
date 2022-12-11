@@ -1,3 +1,8 @@
+body{
+background: rgb(0,0,2);
+background: linear-gradient(90deg, rgba(0,0,2,1) 0%, rgba(249,249,251,1) 0%, rgba(194,200,200,1) 72%);
+
+}
 *{
     padding: 0px;
     margin: 0px;
@@ -22,3 +27,8 @@ label,li,input{
 .badge{
     color: white !important;
 }
+
+ul {
+  list-style-type: none;
+}
+

@@ -29,3 +29,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+
+class Voter(models.Model):
+    chosen_choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    voter_name = models.CharField(max_length=60)
+    def __str__(self):
+        return self.voter_name
