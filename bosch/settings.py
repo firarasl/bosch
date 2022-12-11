@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # from https://django-jazzmin.readthedocs.io/installation/
     'jazzmin',
     'polls.apps.PollsConfig',
+    'django.contrib.admindocs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

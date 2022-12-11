@@ -28,6 +28,9 @@ Once `pip` has finished downloading the dependencies:
 ```
 And navigate to `http://127.0.0.1:8000`.
 
+
+
+
 ## Walkthrough
 
 ### Polls' administration
@@ -42,6 +45,11 @@ In order to create a new poll, click on green button on the right corner, specif
 choices.
 To manage the existing polls, you have to click on the desired question in the previous page. A pop up window will be 
 opened to make changes.
+
+## Documentation
+To view documentation of this app, use the link: http://127.0.0.1:8000/admin/doc/
+Alternatively, you can use the button with a book icon in the right corner of the first page in admin panel.
+After choosing desired topics, information will be displayed. 
 
 ### Voting process
 

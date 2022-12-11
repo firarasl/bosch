@@ -23,6 +23,7 @@ from django.utils.translation import gettext_lazy as _
 # using i18n and _ for translation and adding language code to url slug purposes
 
 urlpatterns = [
+    path(_('admin/doc/'), include('django.contrib.admindocs.urls')),
     path(_('admin/'), admin.site.urls),
     path('', include('polls.urls')),
     path(_('polls/'), include('polls.urls'))
