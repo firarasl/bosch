@@ -14,6 +14,12 @@ Activate virtual environment
 $ .\venv\Scripts\activate
 ```
 
+For Linux:
+```sh
+$ source venv/Scripts/activate
+```
+
+
 Then install the dependencies:
 
 ```sh
@@ -24,8 +30,16 @@ session operates in a virtual environment.
 
 Once `pip` has finished downloading the dependencies:
 ```sh
-(env)$ python manage.py runserver
+(venv)$ python manage.py runserver
 ```
+
+or
+
+```sh
+(venv)$ python3 manage.py runserver
+```
+
+
 And navigate to `http://127.0.0.1:8000`.
 
 
